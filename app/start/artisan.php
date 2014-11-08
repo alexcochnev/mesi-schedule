@@ -13,3 +13,4 @@
 
 
 Artisan::add(new GroupsUpdateCommand());
+Artisan::add(new SchedulesUpdateCommand());
