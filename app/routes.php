@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Route::get('/', function() {
+	$groups = Group::all();
+	return View::make('index', array('groups' => $groups));
 });
