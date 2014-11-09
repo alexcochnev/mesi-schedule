@@ -15,6 +15,7 @@
             <button type="submit">Получить расписание</button>
         </form>
     </div>
+    <div id="schedule"></div>
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="/js/chosen.jquery.min.js"></script>
     <script>
@@ -23,7 +24,7 @@
         $('#group-select-form').submit(function (event) {
             event.preventDefault();
             $.post('/schedule/', $(this).serialize(), function (data) {
-                // do smth
+                $('#schedule').text('hello');
             });
         });
     </script>
