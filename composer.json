@@ -9,7 +9,8 @@
 	}],
 	"require": {
 		"laravel/framework": "4.2.*",
-		"butthurthead/mesi.ru-api": "dev-master"
+		"butthurthead/mesi.ru-api": "dev-master",
+        "eluceo/ical": "*"
 	},
     "require-dev": {
         "barryvdh/laravel-ide-helper": "~1.11",
