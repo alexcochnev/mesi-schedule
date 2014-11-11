@@ -24,7 +24,8 @@ return array(
 
 		'sqlite' => array(
 			'driver'   => 'sqlite',
-			'database' => __DIR__.'\..\..\database\production.sqlite',
+			'database' => strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' ?
+                __DIR__.'\..\..\database\production.sqlite' : __DIR__.'/../../database/production.sqlite',
 			'prefix'   => '',
 		),
 
