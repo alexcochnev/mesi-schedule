@@ -3,6 +3,7 @@
 <head>
     <title>iCal Расписание МЭСИ</title>
     <link rel="stylesheet" type="text/css" href="/css/chosen.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body>
     <div id="groups">

@@ -1,0 +1,28 @@
+.week {
+    float: left;
+    width: 500px;
+}
+
+.week-header {
+    background-color: #1A202C;
+    color: #D13F31;
+}
+
+.day-header {
+    background-color: #1F7872;
+    color: #DEDBA7;
+}
+
+.pair {
+    background-color: #72B095;
+    clear: both;
+}
+
+.day {
+    clear: both;
+}
+
+.time, .name, .type, .teacher, .loc {
+    float: left;
+    padding: 5px;
+}
