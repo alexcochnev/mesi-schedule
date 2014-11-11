@@ -1,13 +1,5 @@
 <?php
 
-/**
- * Class Group
- *
- * @property integer $id
- * @property integer $mesi_id
- * @property string  $name
- * @property-read \Schedule $schedule
- */
 class Group extends Eloquent {
 
 	protected $table = 'group';
