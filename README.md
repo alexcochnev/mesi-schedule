@@ -12,6 +12,14 @@
 ## Зависимости
 
 * PHP 5.6
+* php5-mcrypt
 * Composer
+
+## Установка
+
+* `git clone https://github.com/m4Dc00kie/mesi-schedule.git`
+* `composer update`
+* `cp bootstrap/{start.php.example,start.php}`
+* Добавить в массив local хостнейм своего компьютера
 
 @TBD
