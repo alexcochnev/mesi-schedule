@@ -17,9 +17,10 @@
 
 ## Установка
 
-* `git clone https://github.com/m4Dc00kie/mesi-schedule.git`
-* `composer install`
-* `cp bootstrap/{start.php.example,start.php}`
-* Добавить в массив local файла bootstrap/start.php хостнейм своего компьютера
+1. `git clone https://github.com/m4Dc00kie/mesi-schedule.git`
+2. `composer install`
+3. `composer update`
+4. `cp bootstrap/{start.php.example,start.php}`
+5. Добавить в массив local файла bootstrap/start.php хостнейм своего компьютера
 
 @TBD
