@@ -10,12 +10,12 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"butthurthead/mesi.ru-api": "dev-master",
-        "eluceo/ical": "*"
+		"eluceo/ical": "*"
 	},
-    "require-dev": {
-        "barryvdh/laravel-ide-helper": "~1.11",
-        "doctrine/dbal": "~2.3"
-    },
+	"require-dev": {
+		"barryvdh/laravel-ide-helper": "~1.11",
+		"doctrine/dbal": "~2.3"
+	},
 	"autoload": {
 		"classmap": [
 			"app/commands",
@@ -33,7 +33,7 @@
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
-            "php artisan ide-helper:generate",
+			"php artisan ide-helper:generate",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
