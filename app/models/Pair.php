@@ -17,12 +17,19 @@ class Pair extends Eloquent {
 	}
 
 	/**
+	 * Return pair start time in minutes
+	 *
 	 * @param integer $num
-	 * @return integer minutes
+	 * @return integer|null
 	 */
 	public function getStartTime ()
 	{
-		return 510 + ($this->num-1)*self::PAIR_LENGTH + ($this->num-1)*self::BREAK_LENGTH + ($this->num < 4 ? 0 : 20);
+		$time = null;
+		if ($this->num > 0 AND $this->num < 9) {
+			$time = 510 + ($this->num-1)*self::PAIR_LENGTH + ($this->num-1)*self::BREAK_LENGTH + ($this->num < 4 ? 0 : 20);
+		}
+
+		return $time;
 	}
 
 	/**
@@ -31,6 +38,7 @@ class Pair extends Eloquent {
 	 */
 	public function getFinishTime ()
 	{
-		return 510 + $this->num*self::PAIR_LENGTH + + ($this->num-1)*self::BREAK_LENGTH + ($this->num < 4 ? 0 : 20);
+		$start_time = $this->getStartTime();
+		return $start_time ? $start_time + 90 : $start_time;
 	}
 }
