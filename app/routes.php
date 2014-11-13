@@ -12,8 +12,7 @@
 */
 
 Route::get('/', function() {
-	$groups = Group::all();
-	return View::make('index', array('groups' => $groups));
+	return View::make('index');
 });
 
 Route::controller('api', 'APIController');
