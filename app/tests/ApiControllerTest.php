@@ -1,17 +1,24 @@
 <?php
 
-class ExampleTest extends TestCase {
+class ApiControllerTest extends TestCase {
 
-	/**
-	 * A basic functional test example.
-	 *
-	 * @return void
-	 */
-	public function testBasicExample()
+	public function setUp()
 	{
-		$crawler = $this->client->request('GET', '/');
+		parent::setUp();
+		Artisan::call('migrate');
+		Artisan::call('db:seed');
+	}
 
-		$this->assertTrue($this->client->getResponse()->isOk());
+	public function tearDown()
+	{
+		parent::tearDown();
+		Artisan::call('migrate:reset');
+	}
+
+	public function testGetGroups()
+	{
+		$response = $this->call('GET', 'api/groups');
+		$this->assertEquals(Group::all()->toJson(), $response->getContent());
 	}
 
 }
