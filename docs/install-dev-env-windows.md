@@ -4,7 +4,7 @@
 
 0. Устанавливаем Chocolatey https://chocolatey.org/
 1. Запускаем `cmd.exe` с правами администратора
-2. Выполняем команду `choco install git php wget`
+2. Выполняем команду `choco install git php`
 3. Устанавливаем PHPStorm 8 и активируем лицензию, которую можно получить на
   сайте JetBrains с помощью студенческой почты (https://www.jetbrains.com/)
 
@@ -63,8 +63,8 @@ File: C:\Users\john\Documents\mesi-schedule\artisan
 Arguments: serve
 ```
 5. Внизу окна видим ошибку `Error: Interpreter is not specified or invalid`,
-  жмем кнопку `Fix` -> `PHP Language Level` => 5.6, `Interpreter` ->
-  жмем кнопку `...` -> `+` -> `C:\bin\php\php.exe` -> 'Apply' -> `Ok`
+  жмем кнопку `Fix` -> `PHP Language Level` => `5.6`, `Interpreter` ->
+  жмем кнопку `...` -> `+` -> `C:\bin\php\php.exe` -> `Apply` -> `Ok`
   -> `Interpreter` => `PHP 5.6` -> `Apply` -> `Ok` -> `Apply` -> `Ok`
 6. `File` -> `Settings` -> `PHP` -> `Composer` ->
   `Click here to download from composer.org` ->
