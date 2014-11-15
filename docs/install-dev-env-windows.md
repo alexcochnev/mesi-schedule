@@ -16,7 +16,7 @@ PHP должен был установиться в `C:\bin\php`
   `System Properties` -> `Change Settings` -> `Advanced` ->
   `Environment Variables` -> `User variables for <your user name>` -> `PATH`
   -> `Edit` -> `Variable value` -> привести строку к виду `...;C:\bin\php;`.
-  Если по каким-то причинам путь к `git.exe` не прописа, то дописать и его.
+  Если по каким-то причинам путь к `git.exe` не прописан, то дописать и его.
 1. Переходим в директорию `C:\bin\php` копируем файл `php.ini-development`
   и вставляем его под именем `php.ini`
 2. Открываем файл `php.ini` с помощью любимого текстового редактора (для этих
@@ -26,13 +26,13 @@ PHP должен был установиться в `C:\bin\php`
   (точку с запятой необходимо убрать, т.к. является признаком начала
    комментария)
 4. В секции `Dynamic Extensions` добавляем следующие строки:
-  ```
-  extension=ext\php_curl.dll
-  extension=ext\php_mbstring.dll
-  extension=ext\php_openssl.dll
-  extension=ext\php_pdo_mysql.dll
-  extension=ext\php_pdo_sqlite.dll
-  ```
+```
+extension=ext\php_curl.dll
+extension=ext\php_mbstring.dll
+extension=ext\php_openssl.dll
+extension=ext\php_pdo_mysql.dll
+extension=ext\php_pdo_sqlite.dll
+```
 5. Для проверки работоспособности PHP, необходимо в командной строке выполнить
   команду php. Если не возникло никаких ошибок, то все просто замечательно!
 
