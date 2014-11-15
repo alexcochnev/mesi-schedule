@@ -52,14 +52,14 @@ extension=ext\php_pdo_sqlite.dll
 2. `Configure` -> `Settings` -> `Code Style` -> `PHP` ->
  Выбираем `Use tab character`
 3. `Create new project` -> выбираем директорию где хранится проект:
-  `C:/Users/john/Documents/mesi-schedule` -> выбираем тип `PHP Empty Project`
+  `C:/Users/<username>/Documents/mesi-schedule` -> выбираем тип `PHP Empty Project`
   -> получаем предупреждение что директория не пуста, соглашаемся создать
   проект из имеющихся исходников
 4. `Run` -> `Edit configurations` -> `Add` -> `PHP Script`
 ```
 Name: Run dev server
 Single instance only: yes
-File: C:\Users\john\Documents\mesi-schedule\artisan
+File: C:\Users\<username>\Documents\mesi-schedule\artisan
 Arguments: serve
 ```
 5. Внизу окна видим ошибку `Error: Interpreter is not specified or invalid`,
@@ -68,7 +68,7 @@ Arguments: serve
   -> `Interpreter` => `PHP 5.6` -> `Apply` -> `Ok` -> `Apply` -> `Ok`
 6. `File` -> `Settings` -> `PHP` -> `Composer` ->
   `Click here to download from composer.org` ->
-  `C:\Users\john\Documents\mesi-schedule` -> `Ok` -> `Ok`
+  `C:\Users\<username>\Documents\mesi-schedule` -> `Ok` -> `Ok`
 7. В дереве навигации переходим в `bootstrap`, копируем `start.php.example` и
 вставляем его в эту же директорию под именем `start.php`
 8. Открываем `start.php`, находим следующий код
@@ -84,8 +84,8 @@ $env = $app->detectEnvironment(array(
 ));
 ```
 9. В командной строке выполняем команду
-  `C:\Users\john\Documents\mesi-schedule>php composer.phar install` и
-  `C:\Users\john\Documents\mesi-schedule>php composer.phar update`
+  `C:\Users\<username>\Documents\mesi-schedule>php composer.phar install` и
+  `C:\Users\<username>\Documents\mesi-schedule>php composer.phar update`
 10. Установка завершена. Запускаем проект с конфигурацией `Run dev server`:
   `Run` -> `Run 'Run dev server'`. В появившемся окне должно отобразиться
   следующие:
