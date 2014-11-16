@@ -2,56 +2,56 @@
 
 class PairModelTest extends TestCase {
 
-	public function testGetStartTimeMethod()
+	public function startTimeProvider()
 	{
-		$pair = new Pair();
-
-		$pair->num = 1;
-		$this->assertEquals(8*60+30, $pair->getStartTime(), 'pair #1 start time wrong');
-
-		$pair->num = 2;
-		$this->assertEquals(8*60+30+1*100, $pair->getStartTime(), 'pair #2 start time wrong');
-
-		$pair->num = 5;
-		$this->assertEquals(8*60+30+4*100+20, $pair->getStartTime(), 'pair #5 start time wrong');
-
-		$pair->num = 8;
-		$this->assertEquals(8*60+30+7*100+20, $pair->getStartTime(), 'pair #8 start time wrong');
-
-		$pair->num = 9;
-		$this->assertEquals(null, $pair->getStartTime(), 'pair #9 should return null on getStartTime');
-
-		$pair->num = 0;
-		$this->assertEquals(null, $pair->getStartTime(), 'pair #0 should return null on getStartTime');
-
-		$pair->num = -1;
-		$this->assertEquals(null, $pair->getStartTime(), 'pair #-1 should return null on getStartTime');
+		return array(
+			array(1, 8*60+30),
+			array(2, 8*60+30+1*100),
+			array(5, 8*60+30+4*100+20),
+			array(8, 8*60+30+7*100+20),
+			array(9, null),
+			array(0, null),
+			array(-1, null)
+		);
 	}
 
-	public function testGetFinishTimeMethod()
+	public function finishTimeProvider()
+	{
+		return array(
+			array(1, 8*60+30+90),
+			array(2, 8*60+30+1*100+90),
+			array(5, 8*60+30+4*100+20+90),
+			array(8, 8*60+30+7*100+20+90),
+			array(9, null),
+			array(0, null),
+			array(-1, null)
+		);
+	}
+
+	/**
+	 * @param $num
+	 * @param $time
+	 * @dataProvider startTimeProvider
+	 */
+	public function testGetStartTimeMethod($num, $time)
 	{
 		$pair = new Pair();
 
-		$pair->num = 1;
-		$this->assertEquals(8*60+30+90, $pair->getFinishTime(), 'pair #1 finish time wrong');
+		$pair->num = $num;
+		$this->assertEquals($time, $pair->getStartTime());
+	}
 
-		$pair->num = 2;
-		$this->assertEquals(8*60+30+1*100+90, $pair->getFinishTime(), 'pair #2 finish time wrong');
+	/**
+	 * @param $num
+	 * @param $time
+	 * @dataProvider finishTimeProvider
+	 */
+	public function testGetFinishTimeMethod($num, $time)
+	{
+		$pair = new Pair();
 
-		$pair->num = 5;
-		$this->assertEquals(8*60+30+4*100+20+90, $pair->getFinishTime(), 'pair #5 finish time wrong');
-
-		$pair->num = 8;
-		$this->assertEquals(8*60+30+7*100+20+90, $pair->getFinishTime(), 'pair #8 finish time wrong');
-
-		$pair->num = 9;
-		$this->assertEquals(null, $pair->getFinishTime(), 'pair #9 should return null on getFinishTime');
-
-		$pair->num = 0;
-		$this->assertEquals(null, $pair->getFinishTime(), 'pair #0 should return null on getFinishTime');
-
-		$pair->num = -1;
-		$this->assertEquals(null, $pair->getFinishTime(), 'pair #-1 should return null on getFinishTime');
+		$pair->num = $num;
+		$this->assertEquals($time, $pair->getFinishTime());
 	}
 
 
