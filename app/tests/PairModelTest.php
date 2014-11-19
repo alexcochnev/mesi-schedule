@@ -2,57 +2,30 @@
 
 class PairModelTest extends TestCase {
 
-	public function startTimeProvider()
+	public function pairTimeProvider()
 	{
 		return array(
-			array(1, 8*60+30),
-			array(2, 8*60+30+1*100),
-			array(5, 8*60+30+4*100+20),
-			array(8, 8*60+30+7*100+20),
-			array(9, null),
-			array(0, null),
-			array(-1, null)
-		);
-	}
-
-	public function finishTimeProvider()
-	{
-		return array(
-			array(1, 8*60+30+90),
-			array(2, 8*60+30+1*100+90),
-			array(5, 8*60+30+4*100+20+90),
-			array(8, 8*60+30+7*100+20+90),
-			array(9, null),
-			array(0, null),
-			array(-1, null)
+			array(1, 510, 600),
+			array(2, 610, 700),
+			array(5, 930, 1020),
+			array(8, 1230, 1320),
+			array(9, null, null),
+			array(0, null, null),
+			array(-1, null, null)
 		);
 	}
 
 	/**
-	 * @param $num
-	 * @param $time
-	 * @dataProvider startTimeProvider
+	 * @param integer $pair_num
+	 * @param integer $expected_start_time
+	 * @dataProvider pairTimeProvider
 	 */
-	public function testGetStartTimeMethod($num, $time)
+	public function testGetStartTimeMethod($pair_num, $expected_start_time, $expected_finish_time)
 	{
-		$pair = new Pair();
+		$pair = new Pair(array('num' => $pair_num));
 
-		$pair->num = $num;
-		$this->assertEquals($time, $pair->getStartTime());
+		$this->assertEquals($expected_start_time, $pair->getStartTime());
+		$this->assertEquals($expected_finish_time, $pair->getFinishTime());
 	}
-
-	/**
-	 * @param $num
-	 * @param $time
-	 * @dataProvider finishTimeProvider
-	 */
-	public function testGetFinishTimeMethod($num, $time)
-	{
-		$pair = new Pair();
-
-		$pair->num = $num;
-		$this->assertEquals($time, $pair->getFinishTime());
-	}
-
 
 } 
