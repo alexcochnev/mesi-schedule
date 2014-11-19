@@ -26,7 +26,8 @@ class Pair extends Eloquent {
 	{
 		$time = null;
 		if ($this->num > 0 AND $this->num < 9) {
-			$time = 510 + ($this->num-1)*self::PAIR_LENGTH + ($this->num-1)*self::BREAK_LENGTH + ($this->num < 4 ? 0 : 20);
+			$time = 510 + ($this->num-1)*self::PAIR_LENGTH + ($this->num-1)*self::BREAK_LENGTH +
+				($this->num < 4 ? 0 : 20);
 		}
 
 		return $time;
@@ -39,6 +40,6 @@ class Pair extends Eloquent {
 	public function getFinishTime ()
 	{
 		$start_time = $this->getStartTime();
-		return $start_time ? $start_time + 90 : $start_time;
+		return $start_time ? $start_time + self::PAIR_LENGTH : $start_time;
 	}
 }
